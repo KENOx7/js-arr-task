@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="task1">
+        <h2>Task 1</h2>
+    </div>
+    <div id="task2">
+        <h2>Task 2</h2>
+        <input type="text" id="soz">
+        <button onclick="ok()">Ok</button>
+        <div id="son"></div>
+    </div>
+    <div id="task3">
+        <h2>Task 3</h2>
+    </div>
+    <div id="task4">
+        <h2>Task 4 Reverse</h2>
+        <p id='r'></p>
+    </div>
+    <div id="task4">
+        <h2>Task 4 Sort</h2>
+        <p id='d'></p>
+    </div>
+
+    <script>
+
+        const task1 = document.getElementById('task1');
+        const k = 'kenan';
+
+        for (let i = 0; i < k.length; i++) {
+            let son = ''
+            for (let j = 0; j < k.length; j++) {
+                if (i == j) {
+                    son += k[j].toUpperCase()
+                } else {
+                    son += k[j]
+                }
+
+            }
+            task1.innerHTML += son + '<br>'
+
+        }
+
+        function ok() {
+            const soz = document.getElementById('soz').value
+            const son = document.getElementById('son')
+
+            for (let i = 0; i < soz.length; i++) {
+                let x = Math.round(Math.random() * 255)
+                let y = Math.round(Math.random() * 255)
+                let z = Math.round(Math.random() * 255)
+                son.innerHTML += `<span style="color: rgb(${x},${y},${z})">${soz[i]}</span>`
+            }
+        }
+
+        const task3 = document.getElementById('task3')
+        const adlar = ['Kenan', 'Lale', 'Sadiq', 'Nurlan', 'Nihad']
+        for (let i = 0; i < adlar.length; i++) {
+            task3.innerHTML += adlar[i] + '<br>'
+
+        }
+
+        const ters = [12, 23, 11, 43, 100]
+        const r = document.getElementById('r')
+        ters.reverse()
+        r.innerHTML = ters
+
+        const duz = [12, 23, 11, 43, 100]
+        const d = document.getElementById('d')
+        duz.sort((a, b) => a - b);
+        d.innerHTML = duz
+    </script>
+
+</body>
+
+</html>
