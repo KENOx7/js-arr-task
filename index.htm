@@ -28,11 +28,17 @@
         <h2>Task 4 Sort</h2>
         <p id='d'></p>
     </div>
+    <div id="task5">
+        <h2>Task 5</h2>
+        <input type="text" id="inp">
+        <button onclick="ok2()">Ok</button>
+        <p id="sa"></p>
+    </div>
+
 
     <script>
-
-        const task1 = document.getElementById('task1');
-        const k = 'kenan';
+        const task1 = document.getElementById('task1')
+        const k = 'kenan'
 
         for (let i = 0; i < k.length; i++) {
             let son = ''
@@ -76,6 +82,15 @@
         const d = document.getElementById('d')
         duz.sort((a, b) => a - b);
         d.innerHTML = duz
+
+        function ok2() {
+            const inp = document.getElementById('inp').value
+            const sa = document.getElementById('sa')
+            let arr = ['Kenan']
+            arr.push(inp)
+            arr.unshift(inp)
+            sa.innerHTML = arr
+        }
     </script>
 
 </body>
